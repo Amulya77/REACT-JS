@@ -13,7 +13,12 @@ function App() {
   const addvalue=()=>{
     // counter++;
    
-    setCounter(counter+1)
+    setCounter(prevCounter=>prevCounter+1)
+    setCounter(prevCounter=>prevCounter+1)
+    setCounter(prevCounter=>prevCounter+1)
+    setCounter(prevCounter=>prevCounter+1)
+    setCounter(prevCounter=>prevCounter+1)
+    
     console.log(counter);
   }
 
@@ -55,3 +60,40 @@ function App() {
 }
 
 export default App
+
+
+
+/*interview k purpose se
+
+const addvalue=()=>{
+    // counter++;
+   
+    setCounter(counter+1)
+    setCounter(counter+1)
+    setCounter(counter+1)
+    setCounter(counter+1)
+    setCounter(counter+1)
+    console.log(counter);
+
+    the above will not increase the value of counter by 5 because the setCounter is asynchronous, it does not immediately update the value of counter
+    it does the work in batches and will treat them as a single same batch;
+    its a use state batch update
+
+    to update the value of counter by 5 we can use the below method
+
+
+    setCounter(prevCounter=>prevCounter+1)
+    setCounter(prevCounter=>prevCounter+1)
+    setCounter(prevCounter=>prevCounter+1)
+    setCounter(prevCounter=>prevCounter+1)
+    setCounter(prevCounter=>prevCounter+1)
+
+    note: the above method is not a batch update, it is a single update, so if you want to do multiple updates in one go, then use the above method
+    also we can use anything instead of prevCounter, it is just a name, we can use anything like counter, value, etc.
+    
+  }
+
+
+
+
+*/
