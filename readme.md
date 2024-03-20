@@ -1,1 +1,1 @@
-this is a react-js learning related repo
+this is a react-js related repo
